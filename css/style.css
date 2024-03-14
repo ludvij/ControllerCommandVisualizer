@@ -1,0 +1,107 @@
+
+h1 {
+	color: white;
+	font-family: "open sans", sans-serif;
+	text-align: center;
+}
+
+
+.controller.direction {
+	aspect-ratio: 1 / 1;
+	width: 10em;
+
+}
+
+#controller_direction {
+	background-image: url('/img/direction/circle.svg');
+	background-size: 100%;
+}
+
+.controller.direction img {
+	width: 100%;
+	display: block;
+	aspect-ratio: 1 / 1;
+}
+
+.controller.direction {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.controller.direction.u img {
+	rotate: -90deg;
+}
+
+.controller.direction.d img {
+	rotate: 90deg;
+}
+
+.controller.direction.l img {
+	rotate: 180deg;
+}
+
+.controller.direction.ul img {
+	rotate: -135deg;
+}
+
+.controller.direction.ur img {
+	rotate: -45deg;
+}
+
+.controller.direction.dl img {
+	rotate: 135deg;
+}
+
+.controller.direction.dr img {
+	rotate: 45deg;
+}
+
+
+
+
+.controller.button {
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	width: 10em;
+}
+
+
+.controller.button img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+}
+
+#controller_direction {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.1rem;
+	width: fit-content;
+}
+
+body {
+	background-color: #282c34;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+section:first-of-type {
+	width: fit-content;
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+	gap: 0.1rem;
+	align-items: center;
+}
+
+#controller_buttons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: fit-content;
+	height: fit-content;
+	gap: 0.1rem;
+}
