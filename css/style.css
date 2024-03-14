@@ -13,7 +13,7 @@ h1 {
 }
 
 #controller_direction {
-	background-image: url('/img/direction/circle.svg');
+	background-image: url('./img/direction/circle.svg');
 	background-size: 100%;
 }
 
