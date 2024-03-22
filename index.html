@@ -5,37 +5,67 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Command special visualizer</title>
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="js/platform.js"></script>
+	<script type="text/javascript" src="js/assets.json.js"></script>
+	<script type="text/javascript" src="js/config.json.js"></script>
+	<script type="text/javascript" src="js/platform.js" defer></script>
 	<script type="text/javascript" src="js/commandVisualizer.js" defer></script>
+	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<header>
 		<h1>Controller Command Visualizer</h1>
+		<section id="platform_spacer">
+			<label for="platforms">Elegir plataforma</label>
+			<select name="platforms" id="platform_selection">
+			</select>
+		</section>
 	</header>
 	<main>
-		<section>
+		<section id="input_history">
+			<h2>Command history</h2>
+			<ul id="commands"></ul>
+		</section>
+		<section id="controller_status">
 			<section id="controller_direction">
-				<div class="controller direction ul" id="controller_direction_ul"></div>
-				<div class="controller direction u"  id="controller_direction_u"></div>
-				<div class="controller direction ur" id="controller_direction_ur"></div>
-				<div class="controller direction l"  id="controller_direction_l"></div>
-				<div class="empty"                   id="controller_direction_empty"></div>
-				<div class="controller direction r"  id="controller_direction_r"></div>
-				<div class="controller direction dl" id="controller_direction_dl"></div>
-				<div class="controller direction d"  id="controller_direction_d"></div>	
-				<div class="controller direction dr" id="controller_direction_dr"></div>	
+				<div class="controller direction ul"    id="controller_direction_ul">
+					<img id="controller_direction_img_ul" class="direction_img ul"/>
+				</div>
+				<div class="controller direction u"     id="controller_direction_u">
+					<img id="controller_direction_img_u" class="direction_img u"/>
+				</div>
+				<div class="controller direction ur"    id="controller_direction_ur">
+					<img id="controller_direction_img_ur" class="direction_img ur"/>
+				</div>
+				<div class="controller direction l"     id="controller_direction_l">
+					<img id="controller_direction_img_l" class="direction_img l"/>
+				</div>
+				<div class="controller direction empty" id="controller_direction_empty">
+					<img id="controller_direction_img_empty"/>
+				</div>
+				<div class="controller direction r"     id="controller_direction_r">
+					<img id="controller_direction_img_r" class="direction_img r"/>
+				</div>
+				<div class="controller direction dl"    id="controller_direction_dl">
+					<img id="controller_direction_img_dl" class="direction_img dl"/>
+				</div>
+				<div class="controller direction d"     id="controller_direction_d">
+					<img id="controller_direction_img_d" class="direction_img d"/>
+				</div>	
+				<div class="controller direction dr"    id="controller_direction_dr">
+					<img id="controller_direction_img_dr" class="direction_img dr"/>
+				</div>	
 			</section>
 			<section id="controller_buttons">
-				<div class="controller button X"  id="controller_button_x"></div>
-				<div class="controller button Y"  id="controller_button_y"></div>
-				<div class="controller button RB" id="controller_button_rb"></div>
-				<div class="controller button LB" id="controller_button_lb"></div>
-				<div class="controller button A"  id="controller_button_a"></div>
-				<div class="controller button B"  id="controller_button_b"></div>
-				<div class="controller button RT" id="controller_button_rt"></div>
-				<div class="controller button LT" id="controller_button_lt"></div>
+				<div class="controller button X"  id="controller_button_x"><img id="controller_button_X"/></div>
+				<div class="controller button Y"  id="controller_button_y"><img id="controller_button_Y"/></div>
+				<div class="controller button RB" id="controller_button_rb"><img id="controller_button_RB"/></div>
+				<div class="controller button LB" id="controller_button_lb"><img id="controller_button_LB"/></div>
+				<div class="controller button A"  id="controller_button_a"><img id="controller_button_A"/></div>
+				<div class="controller button B"  id="controller_button_b"><img id="controller_button_B"/></div>
+				<div class="controller button RT" id="controller_button_rt"><img id="controller_button_RT"/></div>
+				<div class="controller button LT" id="controller_button_lt"><img id="controller_button_LT"/></div>
 			</section>
 		</section>
 	</main>

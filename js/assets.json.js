@@ -1,4 +1,4 @@
-{
+const assets = {
 	"xbox" : {
 		"selected" : {
 			"A"  : "img/xbox/xbox_button_color_a.svg",
@@ -21,7 +21,7 @@
 			"LB" : "img/xbox/xbox_lb_outline.svg"
 		}
 	},
-	"ps" : {
+	"play station" : {
 		"selected" : {
 			"A"  : "img/ps/playstation_button_color_cross.svg",
 			"B"  : "img/ps/playstation_button_color_circle.svg",
@@ -44,6 +44,7 @@
 		}
 	},
 	"direction" : {
-		"arrow" : "img/direction/flair_arrow_long.svg"
+		"arrow" : "img/direction/flair_arrow_long.svg",
+		"empty" : "img/direction/generic_button_circle_outline.svg"
 	}
 }

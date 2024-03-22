@@ -1,21 +1,21 @@
-let button_svgs = undefined
-
 let current_svgs = undefined
-let current_platform = 'xbox'
 
-
-
-async function load_platform() {
-	const response = await fetch('js/assets.json')
-	button_svgs = await response.json()
-	switch (current_platform) {
-		case 'xbox': current_svgs = button_svgs.xbox
-			break
-		case 'ps': current_svgs = button_svgs.ps
-			break
-	}
-
+$('#platform_selection').on('change', (e) => {
+	load_platform(e)
 	clean()
+})
+
+
+for (const platform of config.platforms) {
+	$('#platform_selection').append($('<option/>', {value : platform, text : platform}))
 }
 
-load_platform()
+$(`option[value='${config.default_platform}']`).attr('selected', 'selected')
+
+function load_platform(event) {
+	
+	const platform = event ? event.target.value: config.default_platform
+	current_svgs = assets[platform]
+	
+}
+

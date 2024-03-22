@@ -1,14 +1,51 @@
-
-h1 {
-	color: white;
+:root {
 	font-family: "open sans", sans-serif;
+	color: white;
+	font-size: calc(15px + 0.390625vw);
+}
+
+select, option {
+	font-size: 1rem;
+}
+
+
+
+header {
+	display: flex;
+	height: 4rem;
+	padding-left: 1em;
+}
+h1 {
+	height: 100%;
+	font-size: 1.8rem;
+	display: flex;
+	align-items: center;
+}
+
+#platform_spacer {
+	display: flex;
+	flex-grow: 1;
+	justify-content: end;
+	padding-right: 1rem;
+	align-items: center;
+	gap: 1rem;
+}
+
+#platform_spacer > select {
+	width: 10rem;
+	height: fit-content;
+}
+
+h2 {
 	text-align: center;
+	font-size: 1.5rem;
+
 }
 
 
 .controller.direction {
 	aspect-ratio: 1 / 1;
-	width: 10em;
+	max-width: 7.5rem;
 
 }
 
@@ -18,52 +55,78 @@ h1 {
 }
 
 .controller.direction img {
-	width: 100%;
-	display: block;
+	min-width: 100%;
 	aspect-ratio: 1 / 1;
+	min-height: 100%;
 }
 
 .controller.direction {
+	min-width: 100%;
+	min-height: 100%;
+}
+
+
+#input_history p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.controller.direction.u img {
+img {
+	display: none;
+}
+img[src] {
+	display: block;
+}
+img.u {
 	rotate: -90deg;
 }
 
-.controller.direction.d img {
+img.d {
 	rotate: 90deg;
 }
 
-.controller.direction.l img {
+img.l {
 	rotate: 180deg;
 }
 
-.controller.direction.ul img {
+img.ul {
 	rotate: -135deg;
 }
 
-.controller.direction.ur img {
+img.ur {
 	rotate: -45deg;
 }
 
-.controller.direction.dl img {
+img.dl {
 	rotate: 135deg;
 }
 
-.controller.direction.dr img {
+img.dr {
 	rotate: 45deg;
 }
 
+#controller_status {
+	width: fit-content;
+	display: flex;
+	flex-direction: row;
+	height: fit-content;
+	align-items: center;
+}
+
+#controller_buttons {
+	display: grid;
+	grid-template-columns: repeat(4, 10vw);
+	width: fit-content;
+	height: fit-content;
+	gap: 0.1rem;
+}
 
 
 
 .controller.button {
-	border-radius: 50%;
 	aspect-ratio: 1 / 1;
-	width: 10em;
+	width: 10vw;
 }
 
 
@@ -73,35 +136,69 @@ h1 {
 }
 
 #controller_direction {
+	aspect-ratio: 1 / 1;
+	max-width: 30vw;
+	max-height: 30vw;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 0.1rem;
-	width: fit-content;
+	width: 30vw;
+	height: 30vw;
 }
 
-body {
+html, body {
 	background-color: #282c34;
+	min-height: 100%;
+	height: 100%;
+}
+
+
+#input_history {
+	width: 14rem;
+	padding: .3rem;
+	height: 100%;
 }
 
 main {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
-section:first-of-type {
-	width: fit-content;
-	align-self: center;
-	display: flex;
-	flex-direction: row;
-	gap: 0.1rem;
-	align-items: center;
-}
 
-#controller_buttons {
+.command_row {
+	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	width: fit-content;
-	height: fit-content;
-	gap: 0.1rem;
+	grid-template-columns: 3rem 6rem 3rem;
+	height: 3rem;
+	position: relative;
 }
+
+.command_row::after {
+	position: absolute;
+	height: .1rem;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	content: "";
+	background-color: rgb(56, 62, 74);
+}
+
+
+.command_buttons {
+	display: grid;
+	height: 100%;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.command_buttons img {
+	aspect-ratio: 1 / 1;
+	height: 1.5rem;
+}
+
+.command_buttons .command_buttons_A  { grid-area: 2 / 1; }
+.command_buttons .command_buttons_B  { grid-area: 2 / 2; }
+.command_buttons .command_buttons_X  { grid-area: 1 / 1; }
+.command_buttons .command_buttons_Y  { grid-area: 1 / 2; }
+.command_buttons .command_buttons_RB { grid-area: 1 / 3; }
+.command_buttons .command_buttons_LB { grid-area: 1 / 4; }
+.command_buttons .command_buttons_RT { grid-area: 2 / 3; }
+.command_buttons .command_buttons_LT { grid-area: 2 / 4; }
