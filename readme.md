@@ -1,4 +1,4 @@
-# Controller Command Vizualizer
+# Controller Command Visualizer
 
 A simple webpage to check your fighting game inputs
 
